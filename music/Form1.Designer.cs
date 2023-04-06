@@ -257,6 +257,7 @@
             AddConcertButton.UseAccentColor = false;
             AddConcertButton.UseVisualStyleBackColor = true;
             AddConcertButton.Visible = false;
+            AddConcertButton.Click += AddConcertButton_Click;
             // 
             // DeleteConcertButton
             // 
@@ -382,7 +383,7 @@
             materialButton5.Depth = 0;
             materialButton5.HighEmphasis = true;
             materialButton5.Icon = null;
-            materialButton5.Location = new Point(869, 146);
+            materialButton5.Location = new Point(875, 146);
             materialButton5.Margin = new Padding(4, 6, 4, 6);
             materialButton5.MouseState = MaterialSkin.MouseState.HOVER;
             materialButton5.Name = "materialButton5";

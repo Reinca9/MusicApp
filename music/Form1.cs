@@ -77,7 +77,20 @@ namespace music
 
         private void materialButton5_Click(object sender, EventArgs e)
         {
-            AddNewArtist.cs addartist = new addNewArtist();
+            addNewArtist addartist = new addNewArtist();
+            addartist.FormBorderStyle = FormBorderStyle.None;
+            addartist.TopMost = true;
+            addartist.StartPosition = FormStartPosition.CenterParent;
+            addartist.ShowDialog();
+        }
+
+        private void AddConcertButton_Click(object sender, EventArgs e)
+        {
+            addNewConcert addconcert = new addNewConcert();
+            addconcert.FormBorderStyle = FormBorderStyle.None;
+            addconcert.TopMost = true;
+            addconcert.StartPosition = FormStartPosition.CenterParent;
+            addconcert.ShowDialog();
         }
     }
 }

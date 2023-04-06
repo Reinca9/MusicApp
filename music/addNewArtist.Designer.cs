@@ -35,6 +35,8 @@
             materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             AddArtistInDB = new MaterialSkin.Controls.MaterialButton();
+            materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             SuspendLayout();
             // 
             // materialButton2
@@ -100,12 +102,29 @@
             AddArtistInDB.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             AddArtistInDB.UseAccentColor = false;
             AddArtistInDB.UseVisualStyleBackColor = true;
+            AddArtistInDB.Click += AddArtistInDB_Click;
+            // 
+            // materialLabel3
+            // 
+            resources.ApplyResources(materialLabel3, "materialLabel3");
+            materialLabel3.Depth = 0;
+            materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel3.Name = "materialLabel3";
+            // 
+            // materialLabel4
+            // 
+            resources.ApplyResources(materialLabel4, "materialLabel4");
+            materialLabel4.Depth = 0;
+            materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel4.Name = "materialLabel4";
             // 
             // addNewArtist
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = materialButton2;
+            Controls.Add(materialLabel4);
+            Controls.Add(materialLabel3);
             Controls.Add(AddArtistInDB);
             Controls.Add(materialLabel2);
             Controls.Add(materialLabel1);
@@ -126,5 +145,7 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialButton AddArtistInDB;
+        private MaterialSkin.Controls.MaterialLabel materialLabel3;
+        private MaterialSkin.Controls.MaterialLabel materialLabel4;
     }
 }
