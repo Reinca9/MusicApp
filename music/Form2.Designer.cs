@@ -167,7 +167,6 @@
             materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             materialButton2.UseAccentColor = false;
             materialButton2.UseVisualStyleBackColor = true;
-            materialButton2.Click += materialButton2_Click;
             // 
             // materialButton3
             // 
@@ -237,7 +236,6 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form2";
             TopMost = true;
-            Load += Form2_Load;
             ResumeLayout(false);
             PerformLayout();
         }

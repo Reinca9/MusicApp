@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,19 +14,12 @@ namespace music
 {
     public partial class Form2 : Form
     {
-        public Form2()
+        private Form1 mainForm;
+
+        public Form2(Form1 mainForm)
         {
             InitializeComponent();
-        }
-
-        private void materialButton2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form2_Load(object sender, EventArgs e)
-        {
-
+            this.mainForm = mainForm;
         }
 
         private void materialButton3_Click(object sender, EventArgs e)
@@ -33,13 +27,9 @@ namespace music
 
 
             RegisterForm registerForm = new RegisterForm();
-
-            // Set Form2 properties
             registerForm.FormBorderStyle = FormBorderStyle.None;
             registerForm.TopMost = true;
             registerForm.StartPosition = FormStartPosition.CenterParent;
-
-            // Show Form2 as a dialog box
             registerForm.ShowDialog();
 
 
@@ -76,28 +66,30 @@ namespace music
         private void materialButton1_Click(object sender, EventArgs e)
         {
             string connectionString = "datasource=localhost;port=3306;username=root;password=root;database=music";
-            SqlConnection connection = new SqlConnection(connectionString);
+            MySqlConnection connection = new MySqlConnection(connectionString);
+
+            connection.Open();
 
             string username = materialTextBox21.Text;
             string password = materialTextBox22.Text;
-            string query = "SELECT COUNT(*) FROM users WHERE user_email='" + username + "' AND user_pw='" + password + "'";
-            SqlCommand command = new SqlCommand(query, connection);
+            string query = "SELECT COUNT(*) FROM user WHERE user_email='" + username + "' AND user_pw='" + password + "'";
+            MySqlCommand command = new MySqlCommand(query, connection);
 
-            connection.Open();
-            int count = (int)command.ExecuteScalar();
-            connection.Close();
-
+            int count = Convert.ToInt32(command.ExecuteScalar());
 
             if (count > 0)
             {
-
-                this.Hide();
+     
+                mainForm.UpdateLabel(username);
+                mainForm.Show();
+                this.Close();
             }
             else
             {
                 ConnectionFail.Visible = true;
             }
-           
+
+            connection.Close();
         }
     }
 }

@@ -75,3 +75,4 @@ C:\Users\PC-7\Source\Repos\Reinca9\MusicApp\music\obj\Debug\net6.0-windows\ref\m
 C:\Users\PC-7\Source\Repos\Reinca9\MusicApp\music\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Abstractions.dll
 C:\Users\PC-7\Source\Repos\Reinca9\MusicApp\music\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Logging.dll
 C:\Users\PC-7\Source\Repos\Reinca9\MusicApp\music\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Tokens.dll
+C:\Users\PC-7\Source\Repos\Reinca9\MusicApp\music\obj\Debug\net6.0-windows\music.Properties.Resources.resources

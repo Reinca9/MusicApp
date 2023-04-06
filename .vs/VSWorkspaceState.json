@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\music"
+    "\\music",
+    "\\music\\DAOfolder"
   ],
-  "SelectedNode": "\\music\\RegisterForm.cs",
+  "SelectedNode": "\\music\\DAOfolder\\TitlesDAO.cs",
   "PreviewInSolutionExplorer": false
 }
