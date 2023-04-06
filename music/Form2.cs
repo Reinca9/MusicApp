@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -44,11 +45,6 @@ namespace music
 
         }
 
-        private void materialButton1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void materialTextBox21_Enter(object sender, EventArgs e)
         {
             materialTextBox21.Text = "";
@@ -75,6 +71,33 @@ namespace music
             {
                 materialTextBox22.Text = "Your password";
             }
+        }
+
+        private void materialButton1_Click(object sender, EventArgs e)
+        {
+            string connectionString = "datasource=localhost;port=3306;username=root;password=root;database=music";
+            SqlConnection connection = new SqlConnection(connectionString);
+
+            string username = materialTextBox21.Text;
+            string password = materialTextBox22.Text;
+            string query = "SELECT COUNT(*) FROM users WHERE user_email='" + username + "' AND user_pw='" + password + "'";
+            SqlCommand command = new SqlCommand(query, connection);
+
+            connection.Open();
+            int count = (int)command.ExecuteScalar();
+            connection.Close();
+
+
+            if (count > 0)
+            {
+
+                this.Hide();
+            }
+            else
+            {
+                ConnectionFail.Visible = true;
+            }
+           
         }
     }
 }

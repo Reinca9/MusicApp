@@ -35,6 +35,8 @@
             materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             materialButton2 = new MaterialSkin.Controls.MaterialButton();
             materialButton3 = new MaterialSkin.Controls.MaterialButton();
+            connectionSuccess = new MaterialSkin.Controls.MaterialLabel();
+            ConnectionFail = new MaterialSkin.Controls.MaterialLabel();
             SuspendLayout();
             // 
             // materialButton1
@@ -187,6 +189,32 @@
             materialButton3.UseVisualStyleBackColor = true;
             materialButton3.Click += materialButton3_Click;
             // 
+            // connectionSuccess
+            // 
+            connectionSuccess.AutoSize = true;
+            connectionSuccess.Depth = 0;
+            connectionSuccess.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            connectionSuccess.Location = new Point(431, 311);
+            connectionSuccess.MouseState = MaterialSkin.MouseState.HOVER;
+            connectionSuccess.Name = "connectionSuccess";
+            connectionSuccess.Size = new Size(157, 19);
+            connectionSuccess.TabIndex = 8;
+            connectionSuccess.Text = "Connection succesful!";
+            connectionSuccess.Visible = false;
+            // 
+            // ConnectionFail
+            // 
+            ConnectionFail.AutoSize = true;
+            ConnectionFail.Depth = 0;
+            ConnectionFail.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            ConnectionFail.Location = new Point(431, 311);
+            ConnectionFail.MouseState = MaterialSkin.MouseState.HOVER;
+            ConnectionFail.Name = "ConnectionFail";
+            ConnectionFail.Size = new Size(213, 19);
+            ConnectionFail.TabIndex = 9;
+            ConnectionFail.Text = "Invalid username or password";
+            ConnectionFail.Visible = false;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -194,6 +222,8 @@
             BackColor = SystemColors.ControlLight;
             CancelButton = materialButton2;
             ClientSize = new Size(750, 375);
+            Controls.Add(ConnectionFail);
+            Controls.Add(connectionSuccess);
             Controls.Add(materialButton3);
             Controls.Add(materialButton2);
             Controls.Add(materialLabel1);
@@ -221,5 +251,7 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialButton materialButton2;
         private MaterialSkin.Controls.MaterialButton materialButton3;
+        private MaterialSkin.Controls.MaterialLabel connectionSuccess;
+        private MaterialSkin.Controls.MaterialLabel ConnectionFail;
     }
 }

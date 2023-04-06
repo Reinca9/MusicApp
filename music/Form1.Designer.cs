@@ -46,6 +46,9 @@
             materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             dataGridView1 = new DataGridView();
             materialButton2 = new MaterialSkin.Controls.MaterialButton();
+            materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            label1 = new Label();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -174,12 +177,13 @@
             dataGridView1.BorderStyle = BorderStyle.Fixed3D;
             dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.Sunken;
             dataGridView1.ColumnHeadersHeight = 50;
-            dataGridView1.Location = new Point(45, 117);
+            dataGridView1.Location = new Point(45, 135);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 60;
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(1238, 477);
             dataGridView1.TabIndex = 5;
+            dataGridView1.Visible = false;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // materialButton2
@@ -202,11 +206,50 @@
             materialButton2.UseVisualStyleBackColor = true;
             materialButton2.Click += materialButton2_Click;
             // 
+            // materialLabel2
+            // 
+            materialLabel2.AutoSize = true;
+            materialLabel2.Depth = 0;
+            materialLabel2.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel2.Location = new Point(45, 113);
+            materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel2.Name = "materialLabel2";
+            materialLabel2.Size = new Size(128, 19);
+            materialLabel2.TabIndex = 7;
+            materialLabel2.Text = "Liste des concerts";
+            // 
+            // materialLabel3
+            // 
+            materialLabel3.AutoSize = true;
+            materialLabel3.Depth = 0;
+            materialLabel3.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel3.Location = new Point(45, 163);
+            materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel3.Name = "materialLabel3";
+            materialLabel3.Size = new Size(219, 19);
+            materialLabel3.TabIndex = 8;
+            materialLabel3.Text = "Login to access the concert list";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.FlatStyle = FlatStyle.Flat;
+            label1.Font = new Font("Sitka Subheading", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(45, 49);
+            label1.Name = "label1";
+            label1.Size = new Size(140, 18);
+            label1.TabIndex = 9;
+            label1.Text = "Vous êtes bien connecté";
+            label1.Visible = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1377, 650);
+            Controls.Add(label1);
+            Controls.Add(materialLabel3);
+            Controls.Add(materialLabel2);
             Controls.Add(materialButton2);
             Controls.Add(dataGridView1);
             Controls.Add(materialLabel1);
@@ -242,5 +285,8 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private DataGridView dataGridView1;
         private MaterialSkin.Controls.MaterialButton materialButton2;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private MaterialSkin.Controls.MaterialLabel materialLabel3;
+        private Label label1;
     }
 }

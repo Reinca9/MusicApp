@@ -8,9 +8,10 @@ namespace music.classFolder
 {
     internal class Title
     {
-        public string title_name { get; set; }
-        public string title_author { get; set; }
-        public string title_img { get; set; }
+        public string concert_name { get; set; }
+        public string concert_hour { get; set; }
+        public string concert_artist { get; set; }
+        public string concert_date{ get; set; }
 
     }
 }

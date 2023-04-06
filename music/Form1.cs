@@ -12,7 +12,13 @@ namespace music
             titlesBindingSource.DataSource = titlesDAO.getAllTitles();
             dataGridView1.DataSource = titlesBindingSource;
         }
-
+        public void UpdateLabel(string text)
+        {
+            dataGridView1.Visible = true;
+            materialButton1.Visible = false;
+            materialButton2.Visible = false;
+            label1.Visible = true;
+        }
 
         private void materialButton1_Click_1(object sender, EventArgs e)
         {
@@ -21,7 +27,6 @@ namespace music
             form2.TopMost = true;
             form2.StartPosition = FormStartPosition.CenterParent;
             form2.ShowDialog();
-
         }
 
         private void materialButton2_Click(object sender, EventArgs e)
