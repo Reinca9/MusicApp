@@ -1,4 +1,7 @@
-﻿namespace music
+﻿using MaterialSkin.Controls;
+using System.Windows.Forms;
+
+namespace music
 {
     partial class addNewConcert
     {
@@ -31,15 +34,15 @@
             materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             addConcertNameBox = new MaterialSkin.Controls.MaterialTextBox();
-            addConcertHourBox = new MaterialSkin.Controls.MaterialTextBox();
             AddArtistInDB = new MaterialSkin.Controls.MaterialButton();
             choseArtistName = new MaterialSkin.Controls.MaterialComboBox();
             materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             materialButton2 = new MaterialSkin.Controls.MaterialButton();
-            materialTextBox2 = new MaterialSkin.Controls.MaterialTextBox();
             materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
+            materialMaskedTextBox1 = new MaterialSkin.Controls.MaterialMaskedTextBox();
+            materialMaskedTextBox2 = new MaterialSkin.Controls.MaterialMaskedTextBox();
             SuspendLayout();
             // 
             // materialLabel1
@@ -84,23 +87,6 @@
             addConcertNameBox.TabIndex = 27;
             addConcertNameBox.Text = "";
             addConcertNameBox.TrailingIcon = null;
-            // 
-            // addConcertHourBox
-            // 
-            addConcertHourBox.AnimateReadOnly = false;
-            addConcertHourBox.BorderStyle = BorderStyle.None;
-            addConcertHourBox.Depth = 0;
-            addConcertHourBox.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            addConcertHourBox.LeadingIcon = null;
-            addConcertHourBox.Location = new Point(261, 119);
-            addConcertHourBox.MaxLength = 50;
-            addConcertHourBox.MouseState = MaterialSkin.MouseState.OUT;
-            addConcertHourBox.Multiline = false;
-            addConcertHourBox.Name = "addConcertHourBox";
-            addConcertHourBox.Size = new Size(225, 50);
-            addConcertHourBox.TabIndex = 28;
-            addConcertHourBox.Text = "";
-            addConcertHourBox.TrailingIcon = null;
             // 
             // AddArtistInDB
             // 
@@ -178,23 +164,6 @@
             materialButton2.UseAccentColor = false;
             materialButton2.UseVisualStyleBackColor = true;
             // 
-            // materialTextBox2
-            // 
-            materialTextBox2.AnimateReadOnly = false;
-            materialTextBox2.BorderStyle = BorderStyle.None;
-            materialTextBox2.Depth = 0;
-            materialTextBox2.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialTextBox2.LeadingIcon = null;
-            materialTextBox2.Location = new Point(261, 269);
-            materialTextBox2.MaxLength = 50;
-            materialTextBox2.MouseState = MaterialSkin.MouseState.OUT;
-            materialTextBox2.Multiline = false;
-            materialTextBox2.Name = "materialTextBox2";
-            materialTextBox2.Size = new Size(225, 50);
-            materialTextBox2.TabIndex = 35;
-            materialTextBox2.Text = "";
-            materialTextBox2.TrailingIcon = null;
-            // 
             // materialLabel4
             // 
             materialLabel4.AutoSize = true;
@@ -214,7 +183,7 @@
             materialLabel5.Depth = 0;
             materialLabel5.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             materialLabel5.ImeMode = ImeMode.NoControl;
-            materialLabel5.Location = new Point(320, 402);
+            materialLabel5.Location = new Point(290, 402);
             materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel5.Name = "materialLabel5";
             materialLabel5.Size = new Size(150, 19);
@@ -228,7 +197,7 @@
             materialLabel6.Depth = 0;
             materialLabel6.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             materialLabel6.ImeMode = ImeMode.NoControl;
-            materialLabel6.Location = new Point(320, 402);
+            materialLabel6.Location = new Point(289, 402);
             materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel6.Name = "materialLabel6";
             materialLabel6.Size = new Size(187, 19);
@@ -236,21 +205,106 @@
             materialLabel6.Text = "Concert added succesfully";
             materialLabel6.Visible = false;
             // 
+            // materialMaskedTextBox1
+            // 
+            materialMaskedTextBox1.AllowPromptAsInput = true;
+            materialMaskedTextBox1.AnimateReadOnly = false;
+            materialMaskedTextBox1.AsciiOnly = false;
+            materialMaskedTextBox1.BackgroundImageLayout = ImageLayout.None;
+            materialMaskedTextBox1.BeepOnError = false;
+            materialMaskedTextBox1.CutCopyMaskFormat = MaskFormat.IncludeLiterals;
+            materialMaskedTextBox1.Depth = 0;
+            materialMaskedTextBox1.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialMaskedTextBox1.HidePromptOnLeave = false;
+            materialMaskedTextBox1.HideSelection = true;
+            materialMaskedTextBox1.InsertKeyMode = InsertKeyMode.Default;
+            materialMaskedTextBox1.LeadingIcon = null;
+            materialMaskedTextBox1.Location = new Point(261, 119);
+            materialMaskedTextBox1.Mask = "00:00";
+            materialMaskedTextBox1.MaxLength = 32767;
+            materialMaskedTextBox1.MouseState = MaterialSkin.MouseState.OUT;
+            materialMaskedTextBox1.Name = "materialMaskedTextBox1";
+            materialMaskedTextBox1.PasswordChar = '\0';
+            materialMaskedTextBox1.PrefixSuffixText = null;
+            materialMaskedTextBox1.PromptChar = '_';
+            materialMaskedTextBox1.ReadOnly = false;
+            materialMaskedTextBox1.RejectInputOnFirstFailure = false;
+            materialMaskedTextBox1.ResetOnPrompt = true;
+            materialMaskedTextBox1.ResetOnSpace = true;
+            materialMaskedTextBox1.RightToLeft = RightToLeft.No;
+            materialMaskedTextBox1.SelectedText = "";
+            materialMaskedTextBox1.SelectionLength = 0;
+            materialMaskedTextBox1.SelectionStart = 0;
+            materialMaskedTextBox1.ShortcutsEnabled = true;
+            materialMaskedTextBox1.Size = new Size(225, 48);
+            materialMaskedTextBox1.SkipLiterals = true;
+            materialMaskedTextBox1.TabIndex = 39;
+            materialMaskedTextBox1.TabStop = false;
+            materialMaskedTextBox1.Text = "  :";
+            materialMaskedTextBox1.TextAlign = HorizontalAlignment.Left;
+            materialMaskedTextBox1.TextMaskFormat = MaskFormat.IncludeLiterals;
+            materialMaskedTextBox1.TrailingIcon = null;
+            materialMaskedTextBox1.UseSystemPasswordChar = false;
+            materialMaskedTextBox1.ValidatingType = null;
+            // 
+            // materialMaskedTextBox2
+            // 
+            materialMaskedTextBox2.AllowPromptAsInput = true;
+            materialMaskedTextBox2.AnimateReadOnly = false;
+            materialMaskedTextBox2.AsciiOnly = false;
+            materialMaskedTextBox2.BackgroundImageLayout = ImageLayout.None;
+            materialMaskedTextBox2.BeepOnError = false;
+            materialMaskedTextBox2.CutCopyMaskFormat = MaskFormat.IncludeLiterals;
+            materialMaskedTextBox2.Depth = 0;
+            materialMaskedTextBox2.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialMaskedTextBox2.HidePromptOnLeave = false;
+            materialMaskedTextBox2.HideSelection = true;
+            materialMaskedTextBox2.InsertKeyMode = InsertKeyMode.Default;
+            materialMaskedTextBox2.LeadingIcon = null;
+            materialMaskedTextBox2.Location = new Point(261, 269);
+            materialMaskedTextBox2.Mask = "";
+            materialMaskedTextBox2.MaxLength = 32767;
+            materialMaskedTextBox2.MouseState = MaterialSkin.MouseState.OUT;
+            materialMaskedTextBox2.Name = "materialMaskedTextBox2";
+            materialMaskedTextBox2.PasswordChar = '\0';
+            materialMaskedTextBox2.PrefixSuffixText = null;
+            materialMaskedTextBox2.PromptChar = '_';
+            materialMaskedTextBox2.ReadOnly = false;
+            materialMaskedTextBox2.RejectInputOnFirstFailure = false;
+            materialMaskedTextBox2.ResetOnPrompt = true;
+            materialMaskedTextBox2.ResetOnSpace = true;
+            materialMaskedTextBox2.RightToLeft = RightToLeft.No;
+            materialMaskedTextBox2.SelectedText = "";
+            materialMaskedTextBox2.SelectionLength = 0;
+            materialMaskedTextBox2.SelectionStart = 0;
+            materialMaskedTextBox2.ShortcutsEnabled = true;
+            materialMaskedTextBox2.Size = new Size(225, 48);
+            materialMaskedTextBox2.SkipLiterals = true;
+            materialMaskedTextBox2.TabIndex = 40;
+            materialMaskedTextBox2.TabStop = false;
+            materialMaskedTextBox2.TextAlign = HorizontalAlignment.Left;
+            materialMaskedTextBox2.TextMaskFormat = MaskFormat.IncludeLiterals;
+            materialMaskedTextBox2.TrailingIcon = null;
+            materialMaskedTextBox2.UseSystemPasswordChar = false;
+            materialMaskedTextBox2.ValidatingType = null;
+            materialMaskedTextBox2.Mask = "00/00/0000";
+            materialMaskedTextBox2.PromptChar = '_';
+            // 
             // addNewConcert
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = materialButton2;
             ClientSize = new Size(800, 450);
+            Controls.Add(materialMaskedTextBox2);
+            Controls.Add(materialMaskedTextBox1);
             Controls.Add(materialLabel6);
             Controls.Add(materialLabel5);
             Controls.Add(materialLabel4);
-            Controls.Add(materialTextBox2);
             Controls.Add(materialButton2);
             Controls.Add(materialLabel3);
             Controls.Add(choseArtistName);
             Controls.Add(AddArtistInDB);
-            Controls.Add(addConcertHourBox);
             Controls.Add(addConcertNameBox);
             Controls.Add(materialLabel2);
             Controls.Add(materialLabel1);
@@ -266,14 +320,14 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialTextBox addConcertNameBox;
-        private MaterialSkin.Controls.MaterialTextBox addConcertHourBox;
         private MaterialSkin.Controls.MaterialButton AddArtistInDB;
         private MaterialSkin.Controls.MaterialComboBox choseArtistName;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialButton materialButton2;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox2;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
         private MaterialSkin.Controls.MaterialLabel materialLabel6;
+        private MaterialSkin.Controls.MaterialMaskedTextBox materialMaskedTextBox1;
+        private MaterialSkin.Controls.MaterialMaskedTextBox materialMaskedTextBox2;
     }
 }

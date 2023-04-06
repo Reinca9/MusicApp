@@ -61,9 +61,9 @@ namespace music
 
                     // Add parameters to the command object
                     command.Parameters.AddWithValue("@name", addConcertNameBox.Text); ;
-                    command.Parameters.AddWithValue("@hour", addConcertHourBox.Text);
+                    command.Parameters.AddWithValue("@hour", materialMaskedTextBox1.Text);
                     command.Parameters.AddWithValue("@artist", selectedValue);
-                    command.Parameters.AddWithValue("@date", materialTextBox2.Text);
+                    command.Parameters.AddWithValue("@date", materialMaskedTextBox2.Text);
 
                     int result = command.ExecuteNonQuery();
 
