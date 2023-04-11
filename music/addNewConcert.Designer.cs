@@ -31,18 +31,18 @@ namespace music
         /// </summary>
         private void InitializeComponent()
         {
-            materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            addConcertNameBox = new MaterialSkin.Controls.MaterialTextBox();
-            AddArtistInDB = new MaterialSkin.Controls.MaterialButton();
-            choseArtistName = new MaterialSkin.Controls.MaterialComboBox();
-            materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            materialButton2 = new MaterialSkin.Controls.MaterialButton();
-            materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
-            materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
-            materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
-            materialMaskedTextBox1 = new MaterialSkin.Controls.MaterialMaskedTextBox();
-            materialMaskedTextBox2 = new MaterialSkin.Controls.MaterialMaskedTextBox();
+            materialLabel1 = new MaterialLabel();
+            materialLabel2 = new MaterialLabel();
+            addConcertNameBox = new MaterialTextBox();
+            AddArtistInDB = new MaterialButton();
+            choseArtistName = new MaterialComboBox();
+            materialLabel3 = new MaterialLabel();
+            materialButton2 = new MaterialButton();
+            materialLabel4 = new MaterialLabel();
+            materialLabel5 = new MaterialLabel();
+            materialLabel6 = new MaterialLabel();
+            materialMaskedTextBox1 = new MaterialMaskedTextBox();
+            materialMaskedTextBox2 = new MaterialMaskedTextBox();
             SuspendLayout();
             // 
             // materialLabel1
@@ -84,14 +84,14 @@ namespace music
             addConcertNameBox.Multiline = false;
             addConcertNameBox.Name = "addConcertNameBox";
             addConcertNameBox.Size = new Size(225, 50);
-            addConcertNameBox.TabIndex = 27;
+            addConcertNameBox.TabIndex = 1;
             addConcertNameBox.Text = "";
             addConcertNameBox.TrailingIcon = null;
             // 
             // AddArtistInDB
             // 
             AddArtistInDB.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            AddArtistInDB.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            AddArtistInDB.Density = MaterialButton.MaterialButtonDensity.Default;
             AddArtistInDB.Depth = 0;
             AddArtistInDB.HighEmphasis = true;
             AddArtistInDB.Icon = null;
@@ -102,9 +102,9 @@ namespace music
             AddArtistInDB.Name = "AddArtistInDB";
             AddArtistInDB.NoAccentTextColor = Color.Empty;
             AddArtistInDB.Size = new Size(188, 36);
-            AddArtistInDB.TabIndex = 31;
+            AddArtistInDB.TabIndex = 5;
             AddArtistInDB.Text = "Add the new concert";
-            AddArtistInDB.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            AddArtistInDB.Type = MaterialButton.MaterialButtonType.Contained;
             AddArtistInDB.UseAccentColor = false;
             AddArtistInDB.UseVisualStyleBackColor = true;
             AddArtistInDB.Click += AddArtistInDB_Click;
@@ -129,7 +129,7 @@ namespace music
             choseArtistName.Name = "choseArtistName";
             choseArtistName.Size = new Size(225, 49);
             choseArtistName.StartIndex = 0;
-            choseArtistName.TabIndex = 32;
+            choseArtistName.TabIndex = 3;
             // 
             // materialLabel3
             // 
@@ -147,7 +147,7 @@ namespace music
             // materialButton2
             // 
             materialButton2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            materialButton2.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            materialButton2.Density = MaterialButton.MaterialButtonDensity.Default;
             materialButton2.Depth = 0;
             materialButton2.HighEmphasis = true;
             materialButton2.Icon = null;
@@ -160,7 +160,7 @@ namespace music
             materialButton2.Size = new Size(64, 36);
             materialButton2.TabIndex = 34;
             materialButton2.Text = "X";
-            materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            materialButton2.Type = MaterialButton.MaterialButtonType.Contained;
             materialButton2.UseAccentColor = false;
             materialButton2.UseVisualStyleBackColor = true;
             // 
@@ -238,7 +238,7 @@ namespace music
             materialMaskedTextBox1.ShortcutsEnabled = true;
             materialMaskedTextBox1.Size = new Size(225, 48);
             materialMaskedTextBox1.SkipLiterals = true;
-            materialMaskedTextBox1.TabIndex = 39;
+            materialMaskedTextBox1.TabIndex = 2;
             materialMaskedTextBox1.TabStop = false;
             materialMaskedTextBox1.Text = "  :";
             materialMaskedTextBox1.TextAlign = HorizontalAlignment.Left;
@@ -256,13 +256,13 @@ namespace music
             materialMaskedTextBox2.BeepOnError = false;
             materialMaskedTextBox2.CutCopyMaskFormat = MaskFormat.IncludeLiterals;
             materialMaskedTextBox2.Depth = 0;
-            materialMaskedTextBox2.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialMaskedTextBox2.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             materialMaskedTextBox2.HidePromptOnLeave = false;
             materialMaskedTextBox2.HideSelection = true;
             materialMaskedTextBox2.InsertKeyMode = InsertKeyMode.Default;
             materialMaskedTextBox2.LeadingIcon = null;
             materialMaskedTextBox2.Location = new Point(261, 269);
-            materialMaskedTextBox2.Mask = "";
+            materialMaskedTextBox2.Mask = "00/00/0000";
             materialMaskedTextBox2.MaxLength = 32767;
             materialMaskedTextBox2.MouseState = MaterialSkin.MouseState.OUT;
             materialMaskedTextBox2.Name = "materialMaskedTextBox2";
@@ -280,15 +280,14 @@ namespace music
             materialMaskedTextBox2.ShortcutsEnabled = true;
             materialMaskedTextBox2.Size = new Size(225, 48);
             materialMaskedTextBox2.SkipLiterals = true;
-            materialMaskedTextBox2.TabIndex = 40;
+            materialMaskedTextBox2.TabIndex = 4;
             materialMaskedTextBox2.TabStop = false;
+            materialMaskedTextBox2.Text = "  /  /";
             materialMaskedTextBox2.TextAlign = HorizontalAlignment.Left;
             materialMaskedTextBox2.TextMaskFormat = MaskFormat.IncludeLiterals;
             materialMaskedTextBox2.TrailingIcon = null;
             materialMaskedTextBox2.UseSystemPasswordChar = false;
             materialMaskedTextBox2.ValidatingType = null;
-            materialMaskedTextBox2.Mask = "00/00/0000";
-            materialMaskedTextBox2.PromptChar = '_';
             // 
             // addNewConcert
             // 

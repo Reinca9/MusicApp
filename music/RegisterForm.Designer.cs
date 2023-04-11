@@ -94,6 +94,7 @@ namespace music
             materialTextBox22.UseSystemPasswordChar = false;
             materialTextBox22.Enter += materialTextBox22_Enter;
             materialTextBox22.Leave += materialTextBox22_Leave;
+            materialTextBox22.TextChanged += materialTextBox22_TextChanged;
             materialTextBox22.Validating += materialTextBox22_Validating;
             // 
             // materialTextBox21
@@ -119,6 +120,7 @@ namespace music
             materialTextBox21.UseSystemPasswordChar = false;
             materialTextBox21.Enter += materialTextBox21_Enter;
             materialTextBox21.Leave += materialTextBox21_Leave_1;
+            materialTextBox21.TextChanged += materialTextBox21_TextChanged;
             materialTextBox21.Validating += materialTextBox21_Validating;
             // 
             // materialTextBox23
@@ -144,7 +146,7 @@ namespace music
             materialTextBox23.UseSystemPasswordChar = false;
             materialTextBox23.Enter += materialTextBox23_Enter;
             materialTextBox23.Leave += materialTextBox23_Leave;
-            materialTextBox23.Validating += materialTextBox23_Validating_1;
+            materialTextBox23.TextChanged += materialTextBox23_TextChanged;
             // 
             // materialTextBox24
             // 
@@ -169,6 +171,7 @@ namespace music
             materialTextBox24.UseSystemPasswordChar = false;
             materialTextBox24.Enter += materialTextBox24_Enter;
             materialTextBox24.Leave += materialTextBox24_Leave;
+            materialTextBox24.TextChanged += materialTextBox24_TextChanged;
             materialTextBox24.Validating += materialTextBox24_Validating;
             // 
             // materialCheckbox1
@@ -181,6 +184,7 @@ namespace music
             materialCheckbox1.ReadOnly = false;
             materialCheckbox1.Ripple = true;
             materialCheckbox1.UseVisualStyleBackColor = true;
+            materialCheckbox1.CheckedChanged += materialCheckbox1_CheckedChanged;
             // 
             // materialButton2
             // 
@@ -207,6 +211,7 @@ namespace music
             materialCheckbox2.ReadOnly = false;
             materialCheckbox2.Ripple = true;
             materialCheckbox2.UseVisualStyleBackColor = true;
+            materialCheckbox2.CheckedChanged += materialCheckbox2_CheckedChanged;
             // 
             // materialLabel2
             // 
@@ -228,15 +233,17 @@ namespace music
             materialLabel4.BackColor = Color.Gainsboro;
             materialLabel4.Depth = 0;
             materialLabel4.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle1;
-            materialLabel4.ForeColor = Color.DarkGray;
+            materialLabel4.ForeColor = Color.Red;
             materialLabel4.HighEmphasis = true;
             materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel4.Name = "materialLabel4";
-
+            // 
+            // materialLabel5
+            // 
             resources.ApplyResources(materialLabel5, "materialLabel5");
             materialLabel5.BackColor = SystemColors.ButtonFace;
             materialLabel5.Depth = 0;
-            materialLabel5.ForeColor = SystemColors.ActiveCaption;
+            materialLabel5.ForeColor = Color.Red;
             materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel5.Name = "materialLabel5";
             // 
@@ -244,6 +251,7 @@ namespace music
             // 
             resources.ApplyResources(materialLabel6, "materialLabel6");
             materialLabel6.Depth = 0;
+            materialLabel6.ForeColor = Color.Red;
             materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel6.Name = "materialLabel6";
             // 
@@ -251,6 +259,7 @@ namespace music
             // 
             resources.ApplyResources(materialLabel7, "materialLabel7");
             materialLabel7.Depth = 0;
+            materialLabel7.ForeColor = Color.Red;
             materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel7.Name = "materialLabel7";
             // 
@@ -259,9 +268,8 @@ namespace music
             resources.ApplyResources(maskedTextBox1, "maskedTextBox1");
             maskedTextBox1.Name = "maskedTextBox1";
             maskedTextBox1.ValidatingType = typeof(DateTime);
-            maskedTextBox1.Mask = "00/00/0000";
-            maskedTextBox1.ValidatingType = typeof(System.DateTime);
-            maskedTextBox1.TypeValidationCompleted += new TypeValidationEventHandler(maskedTextBox1_TypeValidationCompleted);
+            maskedTextBox1.TypeValidationCompleted += maskedTextBox1_TypeValidationCompleted;
+            maskedTextBox1.TextChanged += maskedTextBox1_TextChanged;
             // 
             // RegisterForm
             // 

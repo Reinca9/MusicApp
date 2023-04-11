@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "sAARIZhWyqnc/iDwGLeTtInezJgHv/jYwJq0mPFaXC4QZ8F+oMpnJ4kZiwt66dHSKvyG2eqjI7hP9tBTUh2/Jw==",
+  "dgSpecHash": "YX9dLvqYN5SomoCQgkvhM/XXX3ZwQUTCJTFDeQF09qbICojwXDfig/0vbWKf9Cw5LjlpEjIEjxsRbKXKyS/Brg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\PC-7\\Source\\Repos\\Reinca9\\MusicApp\\music\\music.csproj",
+  "projectFilePath": "C:\\Users\\PC-7\\source\\repos\\Reinca9\\MusicApp\\music\\music.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\PC-7\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\PC-7\\.nuget\\packages\\controlzex\\4.4.0\\controlzex.4.4.0.nupkg.sha512",
     "C:\\Users\\PC-7\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",
     "C:\\Users\\PC-7\\.nuget\\packages\\k4os.compression.lz4\\1.2.6\\k4os.compression.lz4.1.2.6.nupkg.sha512",

@@ -44,18 +44,18 @@
             materialButton1 = new MaterialSkin.Controls.MaterialButton();
             mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
             dataGridView1 = new DataGridView();
+            deleteConcert = new DataGridViewButtonColumn();
             materialButton2 = new MaterialSkin.Controls.MaterialButton();
             materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             label1 = new Label();
             AddConcertButton = new MaterialSkin.Controls.MaterialButton();
-            DeleteConcertButton = new MaterialSkin.Controls.MaterialButton();
             RefreshConcertListButton = new MaterialSkin.Controls.MaterialButton();
             materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             dataGridView2 = new DataGridView();
+            deleteArtist = new DataGridViewButtonColumn();
             materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             materialButton3 = new MaterialSkin.Controls.MaterialButton();
-            materialButton4 = new MaterialSkin.Controls.MaterialButton();
             materialButton5 = new MaterialSkin.Controls.MaterialButton();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -67,7 +67,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { fichierToolStripMenuItem, editionToolStripMenuItem, affichageToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1377, 24);
+            menuStrip1.Size = new Size(1379, 24);
             menuStrip1.TabIndex = 2;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -170,17 +170,27 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.BorderStyle = BorderStyle.Fixed3D;
             dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.Sunken;
             dataGridView1.ColumnHeadersHeight = 50;
-            dataGridView1.Location = new Point(170, 196);
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { deleteConcert });
+            dataGridView1.Location = new Point(45, 196);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 60;
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(476, 359);
+            dataGridView1.Size = new Size(663, 359);
             dataGridView1.TabIndex = 5;
             dataGridView1.Visible = false;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick_1;
+            // 
+            // deleteConcert
+            // 
+            deleteConcert.HeaderText = "";
+            deleteConcert.Name = "deleteConcert";
+            deleteConcert.Text = "Delete";
+            deleteConcert.UseColumnTextForButtonValue = true;
             // 
             // materialButton2
             // 
@@ -207,7 +217,7 @@
             materialLabel2.AutoSize = true;
             materialLabel2.Depth = 0;
             materialLabel2.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel2.Location = new Point(45, 113);
+            materialLabel2.Location = new Point(45, 108);
             materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel2.Name = "materialLabel2";
             materialLabel2.Size = new Size(128, 19);
@@ -219,7 +229,7 @@
             materialLabel3.AutoSize = true;
             materialLabel3.Depth = 0;
             materialLabel3.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel3.Location = new Point(45, 163);
+            materialLabel3.Location = new Point(45, 170);
             materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel3.Name = "materialLabel3";
             materialLabel3.Size = new Size(219, 19);
@@ -245,7 +255,7 @@
             AddConcertButton.Depth = 0;
             AddConcertButton.HighEmphasis = true;
             AddConcertButton.Icon = null;
-            AddConcertButton.Location = new Point(263, 146);
+            AddConcertButton.Location = new Point(148, 153);
             AddConcertButton.Margin = new Padding(4, 6, 4, 6);
             AddConcertButton.MouseState = MaterialSkin.MouseState.HOVER;
             AddConcertButton.Name = "AddConcertButton";
@@ -259,26 +269,6 @@
             AddConcertButton.Visible = false;
             AddConcertButton.Click += AddConcertButton_Click;
             // 
-            // DeleteConcertButton
-            // 
-            DeleteConcertButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            DeleteConcertButton.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            DeleteConcertButton.Depth = 0;
-            DeleteConcertButton.HighEmphasis = true;
-            DeleteConcertButton.Icon = null;
-            DeleteConcertButton.Location = new Point(450, 146);
-            DeleteConcertButton.Margin = new Padding(4, 6, 4, 6);
-            DeleteConcertButton.MouseState = MaterialSkin.MouseState.HOVER;
-            DeleteConcertButton.Name = "DeleteConcertButton";
-            DeleteConcertButton.NoAccentTextColor = Color.Empty;
-            DeleteConcertButton.Size = new Size(196, 36);
-            DeleteConcertButton.TabIndex = 12;
-            DeleteConcertButton.Text = "Supprimer un concert";
-            DeleteConcertButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            DeleteConcertButton.UseAccentColor = false;
-            DeleteConcertButton.UseVisualStyleBackColor = true;
-            DeleteConcertButton.Visible = false;
-            // 
             // RefreshConcertListButton
             // 
             RefreshConcertListButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
@@ -286,7 +276,7 @@
             RefreshConcertListButton.Depth = 0;
             RefreshConcertListButton.HighEmphasis = true;
             RefreshConcertListButton.Icon = null;
-            RefreshConcertListButton.Location = new Point(170, 146);
+            RefreshConcertListButton.Location = new Point(45, 153);
             RefreshConcertListButton.Margin = new Padding(4, 6, 4, 6);
             RefreshConcertListButton.MouseState = MaterialSkin.MouseState.HOVER;
             RefreshConcertListButton.Name = "RefreshConcertListButton";
@@ -305,7 +295,7 @@
             materialLabel1.AutoSize = true;
             materialLabel1.Depth = 0;
             materialLabel1.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel1.Location = new Point(766, 113);
+            materialLabel1.Location = new Point(848, 97);
             materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel1.Name = "materialLabel1";
             materialLabel1.Size = new Size(120, 19);
@@ -316,19 +306,28 @@
             // 
             dataGridView2.BackgroundColor = SystemColors.ButtonHighlight;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(766, 196);
+            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { deleteArtist });
+            dataGridView2.Location = new Point(848, 196);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowTemplate.Height = 25;
-            dataGridView2.Size = new Size(397, 359);
+            dataGridView2.Size = new Size(364, 359);
             dataGridView2.TabIndex = 14;
             dataGridView2.Visible = false;
+            dataGridView2.CellContentClick += dataGridView2_CellContentClick;
+            // 
+            // deleteArtist
+            // 
+            deleteArtist.HeaderText = "";
+            deleteArtist.Name = "deleteArtist";
+            deleteArtist.Text = "Delete";
+            deleteArtist.UseColumnTextForButtonValue = true;
             // 
             // materialLabel4
             // 
             materialLabel4.AutoSize = true;
             materialLabel4.Depth = 0;
             materialLabel4.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel4.Location = new Point(766, 163);
+            materialLabel4.Location = new Point(848, 163);
             materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel4.Name = "materialLabel4";
             materialLabel4.Size = new Size(186, 19);
@@ -342,7 +341,7 @@
             materialButton3.Depth = 0;
             materialButton3.HighEmphasis = true;
             materialButton3.Icon = null;
-            materialButton3.Location = new Point(766, 146);
+            materialButton3.Location = new Point(848, 146);
             materialButton3.Margin = new Padding(4, 6, 4, 6);
             materialButton3.MouseState = MaterialSkin.MouseState.HOVER;
             materialButton3.Name = "materialButton3";
@@ -356,26 +355,6 @@
             materialButton3.Visible = false;
             materialButton3.Click += materialButton3_Click;
             // 
-            // materialButton4
-            // 
-            materialButton4.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            materialButton4.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            materialButton4.Depth = 0;
-            materialButton4.HighEmphasis = true;
-            materialButton4.Icon = null;
-            materialButton4.Location = new Point(1036, 146);
-            materialButton4.Margin = new Padding(4, 6, 4, 6);
-            materialButton4.MouseState = MaterialSkin.MouseState.HOVER;
-            materialButton4.Name = "materialButton4";
-            materialButton4.NoAccentTextColor = Color.Empty;
-            materialButton4.Size = new Size(127, 36);
-            materialButton4.TabIndex = 17;
-            materialButton4.Text = "Delete artist";
-            materialButton4.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            materialButton4.UseAccentColor = false;
-            materialButton4.UseVisualStyleBackColor = true;
-            materialButton4.Visible = false;
-            // 
             // materialButton5
             // 
             materialButton5.AutoSizeMode = AutoSizeMode.GrowAndShrink;
@@ -383,7 +362,7 @@
             materialButton5.Depth = 0;
             materialButton5.HighEmphasis = true;
             materialButton5.Icon = null;
-            materialButton5.Location = new Point(875, 146);
+            materialButton5.Location = new Point(940, 146);
             materialButton5.Margin = new Padding(4, 6, 4, 6);
             materialButton5.MouseState = MaterialSkin.MouseState.HOVER;
             materialButton5.Name = "materialButton5";
@@ -401,14 +380,12 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1377, 650);
+            ClientSize = new Size(1379, 650);
             Controls.Add(materialButton5);
-            Controls.Add(materialButton4);
             Controls.Add(materialButton3);
             Controls.Add(materialLabel4);
             Controls.Add(dataGridView2);
             Controls.Add(materialLabel1);
-            Controls.Add(DeleteConcertButton);
             Controls.Add(AddConcertButton);
             Controls.Add(RefreshConcertListButton);
             Controls.Add(label1);
@@ -452,13 +429,13 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private Label label1;
         private MaterialSkin.Controls.MaterialButton AddConcertButton;
-        private MaterialSkin.Controls.MaterialButton DeleteConcertButton;
         private MaterialSkin.Controls.MaterialButton RefreshConcertListButton;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private DataGridView dataGridView2;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private MaterialSkin.Controls.MaterialButton materialButton3;
-        private MaterialSkin.Controls.MaterialButton materialButton4;
         private MaterialSkin.Controls.MaterialButton materialButton5;
+        private DataGridViewButtonColumn deleteArtist;
+        private DataGridViewButtonColumn deleteConcert;
     }
 }

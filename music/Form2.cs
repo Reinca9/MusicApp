@@ -72,17 +72,27 @@ namespace music
 
             string username = materialTextBox21.Text;
             string password = materialTextBox22.Text;
-            string query = "SELECT COUNT(*) FROM user WHERE user_email='" + username + "' AND user_pw='" + password + "'";
+
+            // Get the stored password hash from the database
+            string query = "SELECT user_pw FROM user WHERE user_email='" + username + "'";
             MySqlCommand command = new MySqlCommand(query, connection);
+            object result = command.ExecuteScalar();
 
-            int count = Convert.ToInt32(command.ExecuteScalar());
-
-            if (count > 0)
+            if (result != null)
             {
-
-                mainForm.UpdateLabel(username);
-                mainForm.Show();
-                this.Close();
+                // Verify if the entered password matches the stored hash
+                string storedHash = result.ToString();
+                if (BCrypt.Net.BCrypt.Verify(password, storedHash))
+                {
+                    mainForm.UpdateLabel(username);
+                    mainForm.showUsefullButtons();
+                    mainForm.Show();
+                    this.Close();
+                }
+                else
+                {
+                    ConnectionFail.Visible = true;
+                }
             }
             else
             {
@@ -90,6 +100,11 @@ namespace music
             }
 
             connection.Close();
+        }
+
+        private void materialButton2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

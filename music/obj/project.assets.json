@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     "net6.0-windows7.0": {
+      "BCrypt.Net-Next/4.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/BCrypt.Net-Next.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/BCrypt.Net-Next.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "ControlzEx/4.4.0": {
         "type": "package",
         "dependencies": {
@@ -703,6 +716,37 @@
     }
   },
   "libraries": {
+    "BCrypt.Net-Next/4.0.3": {
+      "sha512": "W+U9WvmZQgi5cX6FS5GDtDoPzUCV4LkBLkywq/kRZhuDwcbavOzcDAr3LXJFqHUi952Yj3LEYoWW0jbEUQChsA==",
+      "type": "package",
+      "path": "bcrypt.net-next/4.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "bcrypt.net-next.4.0.3.nupkg.sha512",
+        "bcrypt.net-next.nuspec",
+        "ico.png",
+        "lib/net20/BCrypt.Net-Next.dll",
+        "lib/net20/BCrypt.Net-Next.xml",
+        "lib/net35/BCrypt.Net-Next.dll",
+        "lib/net35/BCrypt.Net-Next.xml",
+        "lib/net462/BCrypt.Net-Next.dll",
+        "lib/net462/BCrypt.Net-Next.xml",
+        "lib/net472/BCrypt.Net-Next.dll",
+        "lib/net472/BCrypt.Net-Next.xml",
+        "lib/net48/BCrypt.Net-Next.dll",
+        "lib/net48/BCrypt.Net-Next.xml",
+        "lib/net5.0/BCrypt.Net-Next.dll",
+        "lib/net5.0/BCrypt.Net-Next.xml",
+        "lib/net6.0/BCrypt.Net-Next.dll",
+        "lib/net6.0/BCrypt.Net-Next.xml",
+        "lib/netstandard2.0/BCrypt.Net-Next.dll",
+        "lib/netstandard2.0/BCrypt.Net-Next.xml",
+        "lib/netstandard2.1/BCrypt.Net-Next.dll",
+        "lib/netstandard2.1/BCrypt.Net-Next.xml",
+        "readme.md"
+      ]
+    },
     "ControlzEx/4.4.0": {
       "sha512": "pZ5z4hYWwE4R13UMCVs6vII//nL7hz+Nwn4oJlnsZJRGqJNy6Z9KnJiTZfly6lKFu0pMc1aWBZpx+VqFTQKP1Q==",
       "type": "package",
@@ -2262,6 +2306,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
+      "BCrypt.Net-Next >= 4.0.3",
       "MahApps.Metro >= 2.4.9",
       "MaterialSkin.2 >= 2.3.1",
       "Microsoft.IdentityModel.Tokens >= 6.28.1",
@@ -2276,11 +2321,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\PC-7\\Source\\Repos\\Reinca9\\MusicApp\\music\\music.csproj",
+      "projectUniqueName": "C:\\Users\\PC-7\\source\\repos\\Reinca9\\MusicApp\\music\\music.csproj",
       "projectName": "music",
-      "projectPath": "C:\\Users\\PC-7\\Source\\Repos\\Reinca9\\MusicApp\\music\\music.csproj",
+      "projectPath": "C:\\Users\\PC-7\\source\\repos\\Reinca9\\MusicApp\\music\\music.csproj",
       "packagesPath": "C:\\Users\\PC-7\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\PC-7\\Source\\Repos\\Reinca9\\MusicApp\\music\\obj\\",
+      "outputPath": "C:\\Users\\PC-7\\source\\repos\\Reinca9\\MusicApp\\music\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2314,6 +2359,10 @@
       "net6.0-windows7.0": {
         "targetAlias": "net6.0-windows",
         "dependencies": {
+          "BCrypt.Net-Next": {
+            "target": "Package",
+            "version": "[4.0.3, )"
+          },
           "MahApps.Metro": {
             "target": "Package",
             "version": "[2.4.9, )"

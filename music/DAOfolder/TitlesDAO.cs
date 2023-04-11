@@ -28,7 +28,7 @@ namespace music.DAOfolder
                 {
                     Title A = new Title()
                     {
-
+                        concert_ID = reader.GetInt16(0),
                         concert_name = reader.GetString(1),
                         concert_hour = reader.GetString(2),
                         concert_artist = reader.GetString(3),

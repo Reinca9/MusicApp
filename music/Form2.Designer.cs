@@ -89,6 +89,7 @@
             materialTextBox21.UseSystemPasswordChar = false;
             materialTextBox21.Enter += materialTextBox21_Enter;
             materialTextBox21.Leave += materialTextBox21_Leave;
+
             // 
             // materialTextBox22
             // 
@@ -120,6 +121,7 @@
             materialTextBox22.UseSystemPasswordChar = false;
             materialTextBox22.Enter += materialTextBox22_Enter;
             materialTextBox22.Leave += materialTextBox22_Leave;
+            materialTextBox22.PasswordChar = '*';
             // 
             // materialCheckbox1
             // 
@@ -167,6 +169,7 @@
             materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             materialButton2.UseAccentColor = false;
             materialButton2.UseVisualStyleBackColor = true;
+            materialButton2.Click += materialButton2_Click;
             // 
             // materialButton3
             // 

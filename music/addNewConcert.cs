@@ -42,7 +42,7 @@ namespace music
                 }
             }
         }
-
+        Form1 mainForm = new Form1();
         private void AddConcertToDB()
         {
             string connectionString = "datasource=localhost;port=3306;username=root;password=root;database=music";
@@ -51,15 +51,15 @@ namespace music
             {
                 connection.Open();
 
-                // Use parameterized query to avoid SQL injection attacks
+                
                 string query = "INSERT INTO concert (concert_name, concert_hour, concert_artist, concert_date) VALUES (@name, @hour, @artist, @date)";
 
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
-                    // Get the selected value from the dropdown list and convert it to string
+                    
                     string selectedValue = choseArtistName.SelectedItem.ToString();
 
-                    // Add parameters to the command object
+                    
                     command.Parameters.AddWithValue("@name", addConcertNameBox.Text); ;
                     command.Parameters.AddWithValue("@hour", materialMaskedTextBox1.Text);
                     command.Parameters.AddWithValue("@artist", selectedValue);
@@ -70,6 +70,8 @@ namespace music
                     if (result > 0)
                     {
                         materialLabel6.Visible = true;
+                        mainForm.RefreshDataGridView();
+
                     }
                     else
                     {

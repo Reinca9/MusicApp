@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PC-7\\Source\\Repos\\Reinca9\\MusicApp\\music\\music.csproj": {}
+    "C:\\Users\\PC-7\\source\\repos\\Reinca9\\MusicApp\\music\\music.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PC-7\\Source\\Repos\\Reinca9\\MusicApp\\music\\music.csproj": {
+    "C:\\Users\\PC-7\\source\\repos\\Reinca9\\MusicApp\\music\\music.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC-7\\Source\\Repos\\Reinca9\\MusicApp\\music\\music.csproj",
+        "projectUniqueName": "C:\\Users\\PC-7\\source\\repos\\Reinca9\\MusicApp\\music\\music.csproj",
         "projectName": "music",
-        "projectPath": "C:\\Users\\PC-7\\Source\\Repos\\Reinca9\\MusicApp\\music\\music.csproj",
+        "projectPath": "C:\\Users\\PC-7\\source\\repos\\Reinca9\\MusicApp\\music\\music.csproj",
         "packagesPath": "C:\\Users\\PC-7\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PC-7\\Source\\Repos\\Reinca9\\MusicApp\\music\\obj\\",
+        "outputPath": "C:\\Users\\PC-7\\source\\repos\\Reinca9\\MusicApp\\music\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -45,6 +45,10 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
             "MahApps.Metro": {
               "target": "Package",
               "version": "[2.4.9, )"
