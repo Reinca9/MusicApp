@@ -69,8 +69,9 @@ namespace music
 
                     if (result > 0)
                     {
+                        Form1 mainform = new Form1();
                         materialLabel6.Visible = true;
-                        mainForm.RefreshDataGridView();
+                        mainform.refreshConcertList();
 
                     }
                     else

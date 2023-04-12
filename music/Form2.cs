@@ -15,12 +15,16 @@ namespace music
     public partial class Form2 : Form
     {
         private Form1 mainForm;
+        private ArtisteData artisteForm;
 
-        public Form2(Form1 mainForm)
+        public Form2(Form1 mainForm, ArtisteData artisteForm)
         {
             InitializeComponent();
             this.mainForm = mainForm;
+            this.artisteForm = artisteForm;
+
         }
+      
 
         private void materialButton3_Click(object sender, EventArgs e)
         {
@@ -73,19 +77,23 @@ namespace music
             string username = materialTextBox21.Text;
             string password = materialTextBox22.Text;
 
-            // Get the stored password hash from the database
+           
             string query = "SELECT user_pw FROM user WHERE user_email='" + username + "'";
             MySqlCommand command = new MySqlCommand(query, connection);
             object result = command.ExecuteScalar();
 
             if (result != null)
             {
-                // Verify if the entered password matches the stored hash
+                
                 string storedHash = result.ToString();
                 if (BCrypt.Net.BCrypt.Verify(password, storedHash))
                 {
                     mainForm.UpdateLabel(username);
+                    artisteForm.UpdateLabel2(username);
                     mainForm.showUsefullButtons();
+                    artisteForm.showUsefullButtons2();
+
+
                     mainForm.Show();
                     this.Close();
                 }

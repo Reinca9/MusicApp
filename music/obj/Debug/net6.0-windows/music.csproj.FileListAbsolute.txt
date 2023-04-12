@@ -79,3 +79,4 @@ C:\Users\PC-7\Source\Repos\Reinca9\MusicApp\music\obj\Debug\net6.0-windows\music
 C:\Users\PC-7\Source\Repos\Reinca9\MusicApp\music\obj\Debug\net6.0-windows\music.addNewArtist.resources
 C:\Users\PC-7\Source\Repos\Reinca9\MusicApp\music\obj\Debug\net6.0-windows\music.addNewConcert.resources
 C:\Users\PC-7\source\repos\Reinca9\MusicApp\music\bin\Debug\net6.0-windows\BCrypt.Net-Next.dll
+C:\Users\PC-7\source\repos\Reinca9\MusicApp\music\obj\Debug\net6.0-windows\music.ArtisteData.resources

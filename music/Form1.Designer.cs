@@ -51,15 +51,9 @@
             label1 = new Label();
             AddConcertButton = new MaterialSkin.Controls.MaterialButton();
             RefreshConcertListButton = new MaterialSkin.Controls.MaterialButton();
-            materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            dataGridView2 = new DataGridView();
-            deleteArtist = new DataGridViewButtonColumn();
-            materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             materialButton3 = new MaterialSkin.Controls.MaterialButton();
-            materialButton5 = new MaterialSkin.Controls.MaterialButton();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
             // 
             // menuStrip1
@@ -159,7 +153,6 @@
             materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             materialButton1.UseAccentColor = false;
             materialButton1.UseVisualStyleBackColor = true;
-            materialButton1.Click += materialButton1_Click_1;
             // 
             // mySqlCommand1
             // 
@@ -290,102 +283,34 @@
             RefreshConcertListButton.Visible = false;
             RefreshConcertListButton.Click += RefreshConcertListButton_Click;
             // 
-            // materialLabel1
-            // 
-            materialLabel1.AutoSize = true;
-            materialLabel1.Depth = 0;
-            materialLabel1.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel1.Location = new Point(848, 97);
-            materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            materialLabel1.Name = "materialLabel1";
-            materialLabel1.Size = new Size(120, 19);
-            materialLabel1.TabIndex = 13;
-            materialLabel1.Text = "Liste des artistes";
-            // 
-            // dataGridView2
-            // 
-            dataGridView2.BackgroundColor = SystemColors.ButtonHighlight;
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { deleteArtist });
-            dataGridView2.Location = new Point(848, 196);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowTemplate.Height = 25;
-            dataGridView2.Size = new Size(364, 359);
-            dataGridView2.TabIndex = 14;
-            dataGridView2.Visible = false;
-            dataGridView2.CellContentClick += dataGridView2_CellContentClick;
-            // 
-            // deleteArtist
-            // 
-            deleteArtist.HeaderText = "";
-            deleteArtist.Name = "deleteArtist";
-            deleteArtist.Text = "Delete";
-            deleteArtist.UseColumnTextForButtonValue = true;
-            // 
-            // materialLabel4
-            // 
-            materialLabel4.AutoSize = true;
-            materialLabel4.Depth = 0;
-            materialLabel4.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel4.Location = new Point(848, 163);
-            materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
-            materialLabel4.Name = "materialLabel4";
-            materialLabel4.Size = new Size(186, 19);
-            materialLabel4.TabIndex = 15;
-            materialLabel4.Text = "Login to see the artists list";
-            // 
             // materialButton3
             // 
             materialButton3.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             materialButton3.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             materialButton3.Depth = 0;
+            materialButton3.Font = new Font("Arial", 15F, FontStyle.Bold, GraphicsUnit.Point);
             materialButton3.HighEmphasis = true;
             materialButton3.Icon = null;
-            materialButton3.Location = new Point(848, 146);
+            materialButton3.Location = new Point(444, 151);
             materialButton3.Margin = new Padding(4, 6, 4, 6);
             materialButton3.MouseState = MaterialSkin.MouseState.HOVER;
             materialButton3.Name = "materialButton3";
             materialButton3.NoAccentTextColor = Color.Empty;
-            materialButton3.Size = new Size(84, 36);
-            materialButton3.TabIndex = 16;
-            materialButton3.Text = "Refresh";
+            materialButton3.Size = new Size(264, 36);
+            materialButton3.TabIndex = 12;
+            materialButton3.Text = "Acceder à la liste des artistes";
             materialButton3.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             materialButton3.UseAccentColor = false;
             materialButton3.UseVisualStyleBackColor = true;
             materialButton3.Visible = false;
             materialButton3.Click += materialButton3_Click;
             // 
-            // materialButton5
-            // 
-            materialButton5.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            materialButton5.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            materialButton5.Depth = 0;
-            materialButton5.HighEmphasis = true;
-            materialButton5.Icon = null;
-            materialButton5.Location = new Point(940, 146);
-            materialButton5.Margin = new Padding(4, 6, 4, 6);
-            materialButton5.MouseState = MaterialSkin.MouseState.HOVER;
-            materialButton5.Name = "materialButton5";
-            materialButton5.NoAccentTextColor = Color.Empty;
-            materialButton5.Size = new Size(153, 36);
-            materialButton5.TabIndex = 18;
-            materialButton5.Text = "Add a new artist";
-            materialButton5.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            materialButton5.UseAccentColor = false;
-            materialButton5.UseVisualStyleBackColor = true;
-            materialButton5.Visible = false;
-            materialButton5.Click += materialButton5_Click;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1379, 650);
-            Controls.Add(materialButton5);
             Controls.Add(materialButton3);
-            Controls.Add(materialLabel4);
-            Controls.Add(dataGridView2);
-            Controls.Add(materialLabel1);
             Controls.Add(AddConcertButton);
             Controls.Add(RefreshConcertListButton);
             Controls.Add(label1);
@@ -402,7 +327,6 @@
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -430,12 +354,7 @@
         private Label label1;
         private MaterialSkin.Controls.MaterialButton AddConcertButton;
         private MaterialSkin.Controls.MaterialButton RefreshConcertListButton;
-        private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private DataGridView dataGridView2;
-        private MaterialSkin.Controls.MaterialLabel materialLabel4;
-        private MaterialSkin.Controls.MaterialButton materialButton3;
-        private MaterialSkin.Controls.MaterialButton materialButton5;
-        private DataGridViewButtonColumn deleteArtist;
         private DataGridViewButtonColumn deleteConcert;
+        private MaterialSkin.Controls.MaterialButton materialButton3;
     }
 }
