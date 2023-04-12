@@ -104,5 +104,16 @@ namespace music
             addartist.StartPosition = FormStartPosition.CenterParent;
             addartist.ShowDialog();
         }
+
+        private void materialButton1_Click(object sender, EventArgs e)
+        {
+            Form1 mainForm = new Form1();
+            mainForm.FormBorderStyle = FormBorderStyle.None;
+            mainForm.TopMost = true;
+            mainForm.StartPosition = FormStartPosition.CenterParent;
+            mainForm.Show();
+            this.Close();
+
+        }
     }
 }

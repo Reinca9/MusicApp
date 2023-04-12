@@ -26,22 +26,43 @@ namespace music
             deleteButtonColumn.UseColumnTextForButtonValue = true;
 
             hideUselessButtons();
+            Form2 loginform = new Form2();
+            string token = loginform.loginToken;
+
+
+
         }
+        private void checkToken(string token)
+        {
+            if (!string.IsNullOrEmpty(token))
+            {
+                hideUselessButtons();
+            }
+            else
+            {
+                UpdateLabel();
+                showUsefullButtons();
+
+            }
+        }
+
         public void hideUselessButtons()
         {
 
             Controls.Remove(RefreshConcertListButton);
             Controls.Remove(AddConcertButton);
+            Controls.Remove(materialButton3);
 
         }
         public void showUsefullButtons()
         {
             Controls.Add(RefreshConcertListButton);
             Controls.Add(AddConcertButton);
+            Controls.Add(materialButton3);
 
 
         }
-        public void UpdateLabel(string username)
+        public void UpdateLabel()
         {
             dataGridView1.Visible = true;
             materialButton1.Visible = false;
@@ -57,7 +78,7 @@ namespace music
         private void materialButton1_Click_1(object sender, EventArgs e)
         {
             ArtisteData artisteData = new ArtisteData();
-            Form2 form2 = new Form2(this, artisteData);
+            Form2 form2 = new Form2();
             form2.Show();
             form2.FormBorderStyle = FormBorderStyle.None;
             form2.TopMost = true;
@@ -139,12 +160,23 @@ namespace music
             artistedata.FormBorderStyle = FormBorderStyle.None;
             artistedata.TopMost = true;
             artistedata.StartPosition = FormStartPosition.CenterParent;
-            artistedata.ShowDialog();
+            artistedata.Show();
+            this.Close();
         }
 
         public void refreshConcertList()
         {
             dataGridView1.Refresh();
+        }
+
+        private void materialButton1_Click(object sender, EventArgs e)
+        {
+            Form2 loginform = new Form2();
+            loginform.FormBorderStyle = FormBorderStyle.None;
+            loginform.TopMost = true;
+            loginform.StartPosition = FormStartPosition.CenterParent;
+            loginform.ShowDialog();
+
         }
     }
 }

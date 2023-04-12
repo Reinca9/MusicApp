@@ -57,7 +57,6 @@
             materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             materialButton1.UseAccentColor = false;
             materialButton1.UseVisualStyleBackColor = true;
-            materialButton1.Click += materialButton1_Click;
             // 
             // materialTextBox21
             // 
@@ -89,7 +88,6 @@
             materialTextBox21.UseSystemPasswordChar = false;
             materialTextBox21.Enter += materialTextBox21_Enter;
             materialTextBox21.Leave += materialTextBox21_Leave;
-
             // 
             // materialTextBox22
             // 
@@ -104,7 +102,7 @@
             materialTextBox22.MaxLength = 32767;
             materialTextBox22.MouseState = MaterialSkin.MouseState.OUT;
             materialTextBox22.Name = "materialTextBox22";
-            materialTextBox22.PasswordChar = '\0';
+            materialTextBox22.PasswordChar = '*';
             materialTextBox22.PrefixSuffixText = null;
             materialTextBox22.ReadOnly = false;
             materialTextBox22.RightToLeft = RightToLeft.No;
@@ -121,7 +119,6 @@
             materialTextBox22.UseSystemPasswordChar = false;
             materialTextBox22.Enter += materialTextBox22_Enter;
             materialTextBox22.Leave += materialTextBox22_Leave;
-            materialTextBox22.PasswordChar = '*';
             // 
             // materialCheckbox1
             // 
