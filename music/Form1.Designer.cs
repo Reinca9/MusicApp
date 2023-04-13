@@ -149,6 +149,7 @@
             materialButton1.Padding = new Padding(1);
             materialButton1.Size = new Size(64, 36);
             materialButton1.TabIndex = 3;
+            materialButton1.Text = "Login";
             materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             materialButton1.UseAccentColor = false;
             materialButton1.UseVisualStyleBackColor = true;
@@ -197,8 +198,9 @@
             materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
             materialButton2.Name = "materialButton2";
             materialButton2.NoAccentTextColor = Color.Empty;
-            materialButton2.Size = new Size(64, 36);
+            materialButton2.Size = new Size(74, 36);
             materialButton2.TabIndex = 6;
+            materialButton2.Text = "SIGNUP";
             materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             materialButton2.UseAccentColor = false;
             materialButton2.UseVisualStyleBackColor = true;
@@ -247,14 +249,14 @@
             AddConcertButton.Depth = 0;
             AddConcertButton.HighEmphasis = true;
             AddConcertButton.Icon = null;
-            AddConcertButton.Location = new Point(204, 151);
+            AddConcertButton.Location = new Point(234, 153);
             AddConcertButton.Margin = new Padding(4, 6, 4, 6);
             AddConcertButton.MouseState = MaterialSkin.MouseState.HOVER;
             AddConcertButton.Name = "AddConcertButton";
             AddConcertButton.NoAccentTextColor = Color.Empty;
-            AddConcertButton.Size = new Size(179, 36);
+            AddConcertButton.Size = new Size(121, 36);
             AddConcertButton.TabIndex = 11;
-            AddConcertButton.Text = "Ajouter un concert";
+            AddConcertButton.Text = "ADD CONCERT";
             AddConcertButton.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             AddConcertButton.UseAccentColor = false;
             AddConcertButton.UseVisualStyleBackColor = true;

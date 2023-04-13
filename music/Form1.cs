@@ -2,22 +2,35 @@ using MaterialSkin.Controls;
 using music.DAOfolder;
 using MySql.Data.MySqlClient;
 using System.Data.SqlClient;
+using System.Diagnostics;
+using System.Diagnostics.Eventing.Reader;
 using System.Security.Cryptography;
 using System.Windows.Forms;
+using static music.Form2;
 
 namespace music
 {
     public partial class Form1 : Form
     {
         BindingSource titlesBindingSource = new BindingSource();
+        
 
-
+        private void OpenForm2()
+        {
+            Form2 form2 = new Form2(this);
+            form2.Show();
+        }
         public Form1()
         {
             InitializeComponent();
+
+          
+
+
             TitlesDAO titlesDAO = new TitlesDAO();
             titlesBindingSource.DataSource = titlesDAO.getAllTitles();
             dataGridView1.DataSource = titlesBindingSource;
+
 
 
             DataGridViewButtonColumn deleteButtonColumn = new DataGridViewButtonColumn();
@@ -25,24 +38,32 @@ namespace music
             deleteButtonColumn.Text = "Delete";
             deleteButtonColumn.UseColumnTextForButtonValue = true;
 
-            hideUselessButtons();
-            Form2 loginform = new Form2();
-            string token = loginform.loginToken;
 
-
-
+           
+            Debug.WriteLine($"isLoggedIn value: {GlobalVariables.isLoggedIn}");
+            checkToken();
         }
-        private void checkToken(string token)
+
+
+        public void UpdateLoginForm()
         {
-            if (!string.IsNullOrEmpty(token))
-            {
-                hideUselessButtons();
-            }
-            else
+            checkToken();
+        }
+        public void checkToken()
+        {
+
+
+            if (GlobalVariables.isLoggedIn == true)
             {
                 UpdateLabel();
                 showUsefullButtons();
-
+                
+            }
+            else
+            {
+              
+                hideUselessButtons();
+                
             }
         }
 
@@ -78,9 +99,9 @@ namespace music
         private void materialButton1_Click_1(object sender, EventArgs e)
         {
             ArtisteData artisteData = new ArtisteData();
-            Form2 form2 = new Form2();
+            Form1 form1 = new Form1(); 
+            Form2 form2 = new Form2(form1);
             form2.Show();
-            form2.FormBorderStyle = FormBorderStyle.None;
             form2.TopMost = true;
             form2.StartPosition = FormStartPosition.CenterParent;
         }
@@ -88,7 +109,6 @@ namespace music
         private void materialButton2_Click(object sender, EventArgs e)
         {
             RegisterForm registerForm = new RegisterForm();
-            registerForm.FormBorderStyle = FormBorderStyle.None;
             registerForm.TopMost = true;
             registerForm.StartPosition = FormStartPosition.CenterParent;
             registerForm.ShowDialog();
@@ -111,7 +131,6 @@ namespace music
         private void AddConcertButton_Click(object sender, EventArgs e)
         {
             addNewConcert addconcert = new addNewConcert();
-            addconcert.FormBorderStyle = FormBorderStyle.None;
             addconcert.TopMost = true;
             addconcert.StartPosition = FormStartPosition.CenterParent;
             addconcert.ShowDialog();
@@ -157,11 +176,9 @@ namespace music
         private void materialButton3_Click(object sender, EventArgs e)
         {
             ArtisteData artistedata = new ArtisteData();
-            artistedata.FormBorderStyle = FormBorderStyle.None;
             artistedata.TopMost = true;
             artistedata.StartPosition = FormStartPosition.CenterParent;
             artistedata.Show();
-            this.Close();
         }
 
         public void refreshConcertList()
@@ -171,12 +188,15 @@ namespace music
 
         private void materialButton1_Click(object sender, EventArgs e)
         {
-            Form2 loginform = new Form2();
-            loginform.FormBorderStyle = FormBorderStyle.None;
+            OpenForm2();
+            Form1 form1 = new Form1();
+            Form2 loginform = new Form2(form1);
             loginform.TopMost = true;
             loginform.StartPosition = FormStartPosition.CenterParent;
             loginform.ShowDialog();
 
         }
+
+       
     }
 }

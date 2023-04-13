@@ -22,12 +22,16 @@ namespace music
 {
     public partial class RegisterForm : Form
     {
-        private object materialCheckBox1;
-        string? checkBoxValue;
-        string? password;
 
+        private void maskedTextBox1_TypeValidationCompleted(object sender, TypeValidationEventArgs e)
+        {
 
+        }
+        public RegisterForm()
+        {
+            InitializeComponent();
 
+        }
 
 
         public string GetGender()
@@ -45,45 +49,29 @@ namespace music
         }
 
 
-        public void RegisterForm_Load()
-        {
-
-        }
-        private void maskedTextBox1_TypeValidationCompleted(object sender, TypeValidationEventArgs e)
-        {
-
-        }
-        public RegisterForm()
-        {
-            InitializeComponent();
-            RegisterForm_Load();
-
-
-        }
-
-
         public void materialButton2_Click(object sender, EventArgs e)
         {
             string connectionString = "datasource=localhost;port=3306;username=root;password=root;database=music";
 
-            MySqlConnection connection = new MySqlConnection(connectionString);
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                string query = "INSERT INTO user (user_email, user_pw, user_bd, user_gender) VALUES (@user_email, @user_pw, @user_bd, @user_gender)";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                string gender = GetGender();
+                string hashedPassword = BCrypt.Net.BCrypt.HashPassword(materialTextBox24.Text);
 
-            string query = "INSERT INTO user (user_email, user_pw, user_bd, user_gender) VALUES (@user_email, @user_pw, @user_bd, @user_gender)";
+                command.Parameters.AddWithValue("@user_email", materialTextBox21.Text);
+                command.Parameters.AddWithValue("@user_pw", hashedPassword);
+                command.Parameters.AddWithValue("@user_bd", maskedTextBox1.Text);
+                command.Parameters.AddWithValue("@user_gender", gender);
 
-            MySqlCommand command = new MySqlCommand(query, connection);
-            string gender = GetGender();
-            string hashedPassword = BCrypt.Net.BCrypt.HashPassword(materialTextBox24.Text); // Hash the password
+                connection.Open();
+                int result = command.ExecuteNonQuery();
+                connection.Close();
+            }
 
-            command.Parameters.AddWithValue("@user_email", materialTextBox21.Text);
-            command.Parameters.AddWithValue("@user_pw", hashedPassword); // Use the hashed password
-            command.Parameters.AddWithValue("@user_bd", maskedTextBox1.Text);
-            command.Parameters.AddWithValue("@user_gender", gender);
-
-            connection.Open();
-            int result = command.ExecuteNonQuery();
-            connection.Close();
-            RegisterForm registerForm = new RegisterForm();
-            registerForm.Close();
+           
+            this.Close();
         }
 
         private void materialLabel3_Load(object sender, EventArgs e)

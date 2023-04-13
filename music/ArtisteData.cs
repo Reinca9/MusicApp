@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using static music.Form2;
 
 namespace music
 {
@@ -22,10 +23,27 @@ namespace music
         public ArtisteData()
         {
             InitializeComponent();
+            checkToken();
 
         }
 
+        public void checkToken()
+        {
+            
 
+            if (GlobalVariables.isLoggedIn == true)
+            {
+                UpdateLabel2();
+                showUsefullButtons2();
+            }
+            else
+            {
+                hideUselessButtons2();
+                
+
+            }
+        }
+        
 
         public void showUsefullButtons2()
         {
@@ -40,7 +58,7 @@ namespace music
             Controls.Remove(materialButton5);
 
         }
-        public void UpdateLabel2(string username)
+        public void UpdateLabel2()
         {
 
             dataGridView2.Visible = true;
@@ -99,7 +117,6 @@ namespace music
         private void materialButton5_Click(object sender, EventArgs e)
         {
             addNewArtist addartist = new addNewArtist();
-            addartist.FormBorderStyle = FormBorderStyle.None;
             addartist.TopMost = true;
             addartist.StartPosition = FormStartPosition.CenterParent;
             addartist.ShowDialog();
@@ -108,7 +125,6 @@ namespace music
         private void materialButton1_Click(object sender, EventArgs e)
         {
             Form1 mainForm = new Form1();
-            mainForm.FormBorderStyle = FormBorderStyle.None;
             mainForm.TopMost = true;
             mainForm.StartPosition = FormStartPosition.CenterParent;
             mainForm.Show();
