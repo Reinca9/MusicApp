@@ -15,10 +15,13 @@ namespace music
 {
     public partial class addNewConcert : Form
     {
-        public addNewConcert()
+        private Form1 mainForm;
+
+        public addNewConcert(Form1 form1)
         {
             InitializeComponent();
             PopulateComboBox();
+            this.mainForm = form1;
         }
         private void PopulateComboBox()
         {
@@ -42,8 +45,8 @@ namespace music
                 }
             }
         }
-        Form1 mainForm = new Form1();
-        private void AddConcertToDB()
+
+        private void AddConcertToDB(Form1 mainForm)
         {
             string connectionString = "datasource=localhost;port=3306;username=root;password=root;database=music";
 
@@ -51,16 +54,13 @@ namespace music
             {
                 connection.Open();
 
-                
                 string query = "INSERT INTO concert (concert_name, concert_hour, concert_artist, concert_date) VALUES (@name, @hour, @artist, @date)";
 
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
-                    
                     string selectedValue = choseArtistName.SelectedItem.ToString();
 
-                    
-                    command.Parameters.AddWithValue("@name", addConcertNameBox.Text); ;
+                    command.Parameters.AddWithValue("@name", addConcertNameBox.Text);
                     command.Parameters.AddWithValue("@hour", materialMaskedTextBox1.Text);
                     command.Parameters.AddWithValue("@artist", selectedValue);
                     command.Parameters.AddWithValue("@date", materialMaskedTextBox2.Text);
@@ -69,10 +69,9 @@ namespace music
 
                     if (result > 0)
                     {
-                        Form1 mainform = new Form1();
+                        // Call refreshConcertList() on the Form1 instance
+                        mainForm.refreshConcertList();
                         materialLabel6.Visible = true;
-                        mainform.refreshConcertList();
-
                     }
                     else
                     {
@@ -87,7 +86,10 @@ namespace music
 
         private void AddArtistInDB_Click(object sender, EventArgs e)
         {
-            AddConcertToDB();
+            // Pass the reference to the Form1 instance to AddConcertToDB()
+            AddConcertToDB((Form1)this.Owner);
         }
+
+
     }
 }

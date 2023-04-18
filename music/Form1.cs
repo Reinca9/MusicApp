@@ -13,18 +13,14 @@ namespace music
     public partial class Form1 : Form
     {
         BindingSource titlesBindingSource = new BindingSource();
-        
 
-        private void OpenForm2()
-        {
-            Form2 form2 = new Form2(this);
-            form2.Show();
-        }
+
+
         public Form1()
         {
             InitializeComponent();
 
-          
+
 
 
             TitlesDAO titlesDAO = new TitlesDAO();
@@ -39,16 +35,17 @@ namespace music
             deleteButtonColumn.UseColumnTextForButtonValue = true;
 
 
-           
+
             Debug.WriteLine($"isLoggedIn value: {GlobalVariables.isLoggedIn}");
             checkToken();
         }
 
 
-        public void UpdateLoginForm()
-        {
-            checkToken();
-        }
+        
+          
+
+
+        
         public void checkToken()
         {
 
@@ -57,13 +54,13 @@ namespace music
             {
                 UpdateLabel();
                 showUsefullButtons();
-                
+
             }
             else
             {
-              
+
                 hideUselessButtons();
-                
+
             }
         }
 
@@ -73,6 +70,7 @@ namespace music
             Controls.Remove(RefreshConcertListButton);
             Controls.Remove(AddConcertButton);
             Controls.Remove(materialButton3);
+            Controls.Remove(dataGridView1);
 
         }
         public void showUsefullButtons()
@@ -80,6 +78,7 @@ namespace music
             Controls.Add(RefreshConcertListButton);
             Controls.Add(AddConcertButton);
             Controls.Add(materialButton3);
+            Controls.Add(dataGridView1);
 
 
         }
@@ -98,12 +97,10 @@ namespace music
 
         private void materialButton1_Click_1(object sender, EventArgs e)
         {
-            ArtisteData artisteData = new ArtisteData();
-            Form1 form1 = new Form1(); 
-            Form2 form2 = new Form2(form1);
-            form2.Show();
+            Form2 form2 = new Form2(this);
             form2.TopMost = true;
             form2.StartPosition = FormStartPosition.CenterParent;
+            
         }
 
         private void materialButton2_Click(object sender, EventArgs e)
@@ -130,7 +127,7 @@ namespace music
 
         private void AddConcertButton_Click(object sender, EventArgs e)
         {
-            addNewConcert addconcert = new addNewConcert();
+            addNewConcert addconcert = new addNewConcert(this);
             addconcert.TopMost = true;
             addconcert.StartPosition = FormStartPosition.CenterParent;
             addconcert.ShowDialog();
@@ -175,7 +172,8 @@ namespace music
 
         private void materialButton3_Click(object sender, EventArgs e)
         {
-            ArtisteData artistedata = new ArtisteData();
+           
+            ArtisteData artistedata = new ArtisteData(this);
             artistedata.TopMost = true;
             artistedata.StartPosition = FormStartPosition.CenterParent;
             artistedata.Show();
@@ -188,15 +186,15 @@ namespace music
 
         private void materialButton1_Click(object sender, EventArgs e)
         {
-            OpenForm2();
-            Form1 form1 = new Form1();
-            Form2 loginform = new Form2(form1);
+
+           
+            Form2 loginform = new Form2(this);
             loginform.TopMost = true;
             loginform.StartPosition = FormStartPosition.CenterParent;
             loginform.ShowDialog();
 
         }
 
-       
+
     }
 }

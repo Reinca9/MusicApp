@@ -17,24 +17,18 @@ namespace music
     {
         Form1 mainform = new Form1();
 
-
-        
-
         public Form2(Form1 form1)
         {
-            
             InitializeComponent();
             mainform = form1;
         }
+
         public static class GlobalVariables
         {
             public static bool isLoggedIn = false;
         }
         private Form1 _form1;
-        private void Form2_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            mainform.UpdateLoginForm();
-        }
+
         private void materialButton3_Click(object sender, EventArgs e)
         {
 
@@ -47,7 +41,7 @@ namespace music
 
 
         }
-        
+
 
         private void materialTextBox21_Enter(object sender, EventArgs e)
         {
@@ -76,10 +70,12 @@ namespace music
                 materialTextBox22.Text = "Your password";
             }
         }
-        private void materialButton2_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+
+
+
+
+
+
 
 
         private void materialButton1_Click(object sender, EventArgs e)
@@ -98,26 +94,40 @@ namespace music
                 command.Parameters.AddWithValue("@username", username);
                 object result = command.ExecuteScalar();
 
-                if (result != null)
+                if (result != null && BCrypt.Net.BCrypt.Verify(password, result.ToString()))
                 {
-                    string storedHash = result.ToString();
-                    if (BCrypt.Net.BCrypt.Verify(password, storedHash))
-                    {
-                        GlobalVariables.isLoggedIn = true;
-                        mainform.checkToken(); // Call the checkToken method again to update the form
-                        this.Close();
-                    }
-                    else
-                    {
-                        ConnectionFail.Visible = true;
-                    }
+                    // Login successful
+                    GlobalVariables.isLoggedIn = true;
+                    Debug.WriteLine($"isLoggedIn value: {GlobalVariables.isLoggedIn}");
+                    mainform.checkToken();
+                    this.DialogResult = DialogResult.OK;
+                    mainform.Show();
                 }
+                else
+                {
+                    // Login failed
+                    ConnectionFail.Visible = true;
+                }
+
                 connection.Close();
             }
         }
 
 
+        private void materialButton2_Click_1(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+
+        private void Form2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+           
+            Debug.WriteLine("closed");
+
+        }
     }
+
 
 }
 

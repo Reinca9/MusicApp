@@ -20,40 +20,45 @@ namespace music
     public partial class ArtisteData : Form
     {
         BindingSource artistBindingSource = new BindingSource();
-        public ArtisteData()
+        Form1 mainform = new Form1();
+        public ArtisteData(Form1 form1)
+
         {
+
             InitializeComponent();
-            checkToken();
+            mainform = form1;
+            checkToken2();
+            dataGridView2.Refresh();
 
         }
-
-        public void checkToken()
+        private Form1 _form1;
+    
+        
+        public void checkToken2()
         {
-            
-
             if (GlobalVariables.isLoggedIn == true)
             {
                 UpdateLabel2();
                 showUsefullButtons2();
+
             }
             else
             {
+
                 hideUselessButtons2();
-                
 
             }
         }
-        
-
         public void showUsefullButtons2()
         {
             Controls.Add(materialButton3);
             Controls.Add(materialButton5);
+            Controls.Add(dataGridView2);
         }
         public void hideUselessButtons2()
         {
 
-
+            Controls.Remove(dataGridView2);
             Controls.Remove(materialButton3);
             Controls.Remove(materialButton5);
 
@@ -124,10 +129,7 @@ namespace music
 
         private void materialButton1_Click(object sender, EventArgs e)
         {
-            Form1 mainForm = new Form1();
-            mainForm.TopMost = true;
-            mainForm.StartPosition = FormStartPosition.CenterParent;
-            mainForm.Show();
+           
             this.Close();
 
         }

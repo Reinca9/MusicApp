@@ -44,6 +44,7 @@
             materialButton1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             materialButton1.Depth = 0;
+            materialButton1.DialogResult = DialogResult.OK;
             materialButton1.HighEmphasis = true;
             materialButton1.Icon = null;
             materialButton1.Location = new Point(288, 301);
@@ -154,6 +155,7 @@
             materialButton2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             materialButton2.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             materialButton2.Depth = 0;
+            materialButton2.DialogResult = DialogResult.Cancel;
             materialButton2.HighEmphasis = true;
             materialButton2.Icon = null;
             materialButton2.Location = new Point(673, 15);
@@ -167,13 +169,14 @@
             materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             materialButton2.UseAccentColor = false;
             materialButton2.UseVisualStyleBackColor = true;
-            materialButton2.Click += materialButton2_Click;
+            materialButton2.Click += materialButton2_Click_1;
             // 
             // materialButton3
             // 
             materialButton3.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             materialButton3.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             materialButton3.Depth = 0;
+            materialButton3.DialogResult = DialogResult.OK;
             materialButton3.HighEmphasis = true;
             materialButton3.Icon = null;
             materialButton3.Location = new Point(288, 253);
@@ -219,8 +222,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoValidate = AutoValidate.EnableAllowFocusChange;
             BackColor = SystemColors.ControlLight;
-            CancelButton = materialButton2;
             ClientSize = new Size(750, 375);
             Controls.Add(ConnectionFail);
             Controls.Add(connectionSuccess);
@@ -237,6 +240,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form2";
             TopMost = true;
+            FormClosed += Form2_FormClosed;
             ResumeLayout(false);
             PerformLayout();
         }

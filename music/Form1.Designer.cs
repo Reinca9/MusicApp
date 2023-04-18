@@ -141,7 +141,7 @@
             materialButton1.Depth = 0;
             materialButton1.HighEmphasis = true;
             materialButton1.Icon = null;
-            materialButton1.Location = new Point(45, 49);
+            materialButton1.Location = new Point(193, 77);
             materialButton1.Margin = new Padding(6, 8, 6, 8);
             materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             materialButton1.Name = "materialButton1";
@@ -170,7 +170,7 @@
             dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.Sunken;
             dataGridView1.ColumnHeadersHeight = 50;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { deleteConcert });
-            dataGridView1.Location = new Point(45, 196);
+            dataGridView1.Location = new Point(362, 196);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 60;
             dataGridView1.RowTemplate.Height = 25;
@@ -193,7 +193,7 @@
             materialButton2.Depth = 0;
             materialButton2.HighEmphasis = true;
             materialButton2.Icon = null;
-            materialButton2.Location = new Point(134, 49);
+            materialButton2.Location = new Point(309, 77);
             materialButton2.Margin = new Padding(4, 6, 4, 6);
             materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
             materialButton2.Name = "materialButton2";
@@ -211,7 +211,7 @@
             materialLabel2.AutoSize = true;
             materialLabel2.Depth = 0;
             materialLabel2.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel2.Location = new Point(45, 108);
+            materialLabel2.Location = new Point(171, 196);
             materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel2.Name = "materialLabel2";
             materialLabel2.Size = new Size(128, 19);
@@ -223,7 +223,7 @@
             materialLabel3.AutoSize = true;
             materialLabel3.Depth = 0;
             materialLabel3.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel3.Location = new Point(45, 170);
+            materialLabel3.Location = new Point(362, 196);
             materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel3.Name = "materialLabel3";
             materialLabel3.Size = new Size(219, 19);
@@ -235,7 +235,7 @@
             label1.AutoSize = true;
             label1.FlatStyle = FlatStyle.Flat;
             label1.Font = new Font("Sitka Subheading", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(45, 49);
+            label1.Location = new Point(92, 31);
             label1.Name = "label1";
             label1.Size = new Size(140, 18);
             label1.TabIndex = 9;
@@ -249,7 +249,7 @@
             AddConcertButton.Depth = 0;
             AddConcertButton.HighEmphasis = true;
             AddConcertButton.Icon = null;
-            AddConcertButton.Location = new Point(234, 153);
+            AddConcertButton.Location = new Point(580, 151);
             AddConcertButton.Margin = new Padding(4, 6, 4, 6);
             AddConcertButton.MouseState = MaterialSkin.MouseState.HOVER;
             AddConcertButton.Name = "AddConcertButton";
@@ -270,7 +270,7 @@
             RefreshConcertListButton.Depth = 0;
             RefreshConcertListButton.HighEmphasis = true;
             RefreshConcertListButton.Icon = null;
-            RefreshConcertListButton.Location = new Point(45, 153);
+            RefreshConcertListButton.Location = new Point(362, 151);
             RefreshConcertListButton.Margin = new Padding(4, 6, 4, 6);
             RefreshConcertListButton.MouseState = MaterialSkin.MouseState.HOVER;
             RefreshConcertListButton.Name = "RefreshConcertListButton";
@@ -292,7 +292,7 @@
             materialButton3.Font = new Font("Arial", 15F, FontStyle.Bold, GraphicsUnit.Point);
             materialButton3.HighEmphasis = true;
             materialButton3.Icon = null;
-            materialButton3.Location = new Point(444, 151);
+            materialButton3.Location = new Point(761, 151);
             materialButton3.Margin = new Padding(4, 6, 4, 6);
             materialButton3.MouseState = MaterialSkin.MouseState.HOVER;
             materialButton3.Name = "materialButton3";

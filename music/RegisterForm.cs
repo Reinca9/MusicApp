@@ -70,7 +70,7 @@ namespace music
                 connection.Close();
             }
 
-           
+
             this.Close();
         }
 
@@ -142,7 +142,7 @@ namespace music
             }
             else
             {
-                
+
                 materialLabel6.Visible = true;
                 if (myString.Length < 8)
                 {
@@ -319,6 +319,11 @@ namespace music
         private void materialCheckbox2_CheckedChanged(object sender, EventArgs e)
         {
             UpdateButtonStatus();
+        }
+
+        private void materialButton1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

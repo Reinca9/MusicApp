@@ -70,6 +70,7 @@ namespace music
             materialButton1.Type = MaterialButton.MaterialButtonType.Contained;
             materialButton1.UseAccentColor = false;
             materialButton1.UseVisualStyleBackColor = true;
+            materialButton1.Click += materialButton1_Click;
             // 
             // materialTextBox22
             // 
